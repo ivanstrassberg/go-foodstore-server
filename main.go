@@ -1,29 +1,19 @@
 package main
 
-import (
-	"log"
-	"os"
-)
+import "log"
 
 func main() {
-	// Initialize your Postgres storage
+
 	store, err := NewPostgresStorage()
+	store.Init()
 	if err != nil {
 		log.Fatal(err)
 	}
-	store.Init()
+	// use to seed DB with data once!
+	// store.SeedWithData("/Users/ivansilin/Documents/coding/golang/foodShop/rewritten/draft.txt")
+	staticDir := "/Users/ivansilin/Documents/coding/golang/foodShop/initHandle/static/"
+	server := NewAPIServer(":"+os.Getenv("PORT"), store, staticDir)
 
-	// Set up the static directory path
-	// staticDir := "public/"
-
-	// Set up server configuration using environment variables
-	// dbHost := os.Getenv("DB_HOST")
-	// dbPort := os.Getenv("DB_PORT")
-	// dbUser := os.Getenv("DB_USER")
-	// dbPassword := os.Getenv("DB_PASSWORD")
-	// dbName := os.Getenv("DB_NAME")
-	server := NewAPIServer(":"+os.Getenv("PORT"), store, staticDir, dbHost, dbPort, dbUser, dbPassword, dbName)
-
-	// Run the server
 	server.Run()
+
 }
