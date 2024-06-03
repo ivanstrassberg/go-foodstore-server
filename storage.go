@@ -108,7 +108,7 @@ func (s *PostgresStore) DeleteCategory(name string) error {
 
 func NewPostgresStorage() (*PostgresStore, error) {
 	// connStr := "user=postgres port=5433 dbname=foodMarket password=root sslmode=disable"
-	connStr := "PGPASSWORD=RWpDOeGNNprpGOSnCitvbbKVgMWQYkVr psql -h monorail.proxy.rlwy.net -U postgres -p 26066 -d railway"
+	connStr := "postgres"
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		return nil, err
