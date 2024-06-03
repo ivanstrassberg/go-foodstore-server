@@ -110,7 +110,7 @@ func NewPostgresStorage() (*PostgresStore, error) {
 	// connStr := "user=postgres port=5433 dbname=foodMarket password=root sslmode=disable"
 	// connStr :=  "PGPASSWORD=RWpDOeGNNprpGOSnCitvbbKVgMWQYkVr psql -h monorail.proxy.rlwy.net -U postgres -p 26066 -d railway"
 	// connStr := "postgresql://postgres:RWpDOeGNNprpGOSnCitvbbKVgMWQYkVr@monorail.proxy.rlwy.net:26066/railway" used to work
-	connStr := "postgres://postgres:RWpDOeGNNprpGOSnCitvbbKVgMWQYkVr@monorail.proxy.rlwy.net:26066/railway?sslmode=disable"
+	connStr := "postgresql://postgres:LZqYuZoKgqFNXiOhebfGdOFHrckUPhGA@viaduct.proxy.rlwy.net:51087/railway"
 
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {

@@ -14,8 +14,8 @@ func main() {
 	}
 	// use to seed DB with data once!
 	// store.SeedWithData("/Users/ivansilin/Documents/coding/golang/foodShop/rewritten/draft.txt")
-	staticDir := "/Users/ivansilin/Documents/coding/golang/foodShop/initHandle/static/"
-	server := NewAPIServer(":"+os.Getenv("PORT"), store, staticDir)
+	// staticDir := "/Users/ivansilin/Documents/coding/golang/foodShop/initHandle/static/"
+	server := NewAPIServer(":"+os.Getenv("PORT"), store, "")
 
 	server.Run()
 
