@@ -108,7 +108,7 @@ func (s *PostgresStore) DeleteCategory(name string) error {
 
 func NewPostgresStorage() (*PostgresStore, error) {
 	// connStr := "user=postgres port=5433 dbname=foodMarket password=root sslmode=disable"
-	connStr := "postgresql://postgres:RWpDOeGNNprpGOSnCitvbbKVgMWQYkVr@monorail.proxy.rlwy.net:26066/railway"
+	connStr :=  "postgres.railway.internal"
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		return nil, err
@@ -124,15 +124,15 @@ func NewPostgresStorage() (*PostgresStore, error) {
 
 func (s *PostgresStore) Init() error {
 	fmt.Println("Initializing DB...")
-	// s.createProductTable()
-	// s.createCustomerTable()
-	// s.createCategoryTable()
-	// s.createCartTable()
-	// s.createCartProductJunctionTable()
-	// s.createOrderTable()
-	// s.createOrderFuncJSON()
-	// s.createOrderFunc()
-	// s.createOrderProductJunctionTable()
+	s.createProductTable()
+	s.createCustomerTable()
+	s.createCategoryTable()
+	s.createCartTable()
+	s.createCartProductJunctionTable()
+	s.createOrderTable()
+	s.createOrderFuncJSON()
+	s.createOrderFunc()
+	s.createOrderProductJunctionTable()
 	fmt.Println("DB Initialized.")
 	// s.createConstraints()
 	return nil
