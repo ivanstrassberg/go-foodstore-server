@@ -131,8 +131,8 @@ func (s *PostgresStore) Init() error {
 	s.createCartProductJunctionTable()
 	s.createOrderTable()
 	s.createOrderFuncJSON()
-	s.createOrderFunc()
-	s.createOrderProductJunctionTable()
+	// s.createOrderFunc()
+	// s.createOrderProductJunctionTable()
 	fmt.Println("DB Initialized.")
 	// s.createConstraints()
 	return nil
