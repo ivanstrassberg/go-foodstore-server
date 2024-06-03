@@ -8,7 +8,7 @@ import (
 func main() {
 
 	store, err := NewPostgresStorage()
-	store.Init()
+	// store.Init()
 	if err != nil {
 		log.Fatal(err)
 	}
